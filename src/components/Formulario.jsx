@@ -25,7 +25,7 @@ export const Formulario = () => {
   const MySwal = withReactContent(Swal)
 
   const alertIsRegisted = () => {
-    if(dateCheck(new Date(lastRegister))) { 
+    if(dateCheck(lastRegister)) { 
       MySwal.fire({
         title: <strong>Ya marcaste asistencia!</strong>,
         icon: 'info'
@@ -64,8 +64,10 @@ export const Formulario = () => {
           title: <strong>{ response?.data?.mensaje}</strong>,
           icon: 'success'
         })
-        setIsRegistered(true)
-        setLastRegister(userTime)
+        if (response?.data?.mensaje !== "No puedes volver a marcar asistencia") {
+          setIsRegistered(true)
+          setLastRegister(userTime)
+        }
       })
       .catch( error => {
         MySwal.fire({
@@ -83,8 +85,7 @@ export const Formulario = () => {
     }
 
   useEffect(() => {
-    setIsRegistered(dateCheck(new Date(lastRegister)))
-    // console.log(dateCheck(new Date(lastRegister)))
+    setIsRegistered(dateCheck(lastRegister))
   },[])
 
   return (

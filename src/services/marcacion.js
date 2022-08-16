@@ -11,9 +11,4 @@ export const registrarMarcacion = ( data ) => {
   }
   console.log(dataPost)
   return axios.post( url, dataPost )    
-  // return new Promise((resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve("no me resolví")
-  //   },2000)
-  // })
 }
