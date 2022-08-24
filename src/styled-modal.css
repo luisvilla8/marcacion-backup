@@ -1,0 +1,34 @@
+.container-modal{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(236, 219, 173);
+  backdrop-filter: blur(5px);
+}
+.modal-temp{
+  width: clamp(10rem, 90vw, 20rem);
+  display: block;
+  background-color: rgb(250, 250, 250);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px -5px 10px rgba(53, 53, 53);
+}
+.h1-temp{
+  font-size: 30px;
+  text-align: center;
+  font-weight: 900;
+}
+.input-temp{
+  padding: 5px 10px;
+  outline: none;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  border: 4px solid rgb(236, 219, 173);
+  width: 100%;
+}
+.input-temp:focus {
+  outline: none;
+  border: 4px solid rgb(243, 209, 114);
+}
